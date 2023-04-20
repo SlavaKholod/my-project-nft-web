@@ -1,1 +1,36 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+$backgroundColor: #2B2B2B;
+$textColorFirst: #ffffff;
+
+$buttonColor: #A259FF;
+
+$transformTime: 250ms;
+$traformCub: cubic-bezier(0.4, 0, 0.2, 1);
+
+
+body {
+    background-color: $backgroundColor;
+    font-family: 'Work Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
