@@ -7,20 +7,23 @@ $buttonColor: #A259FF;
 
 $transformTime: 250ms;
 $traformCub: cubic-bezier(0.4, 0, 0.2, 1);
+$contentWidthMob: 310px;
+$contentWidthTab: 690px;
+$contentWidthDesk: 1050px;
 
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background-color: $backgroundColor;
     font-family: 'Work Sans', sans-serif;
+    color: $textColorFirst;
 }
 
 a {
     text-decoration: none;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
 }
 
 li {
@@ -33,4 +36,21 @@ button {
     cursor: pointer;
     margin: 0;
     padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    @media screen and(max-width: 425px){
+        max-width: $contentWidthMob;
+    }
+    @media screen and(min-width: 426px) and (max-width: 767px){
+        max-width: $contentWidthTab;
+    }
+    @media screen and(min-width: 768px) and (max-width: 1279px){
+        max-width: $contentWidthTab;
+    }
+    
+    @media screen and(min-width: 1280px){
+        max-width: $contentWidthDesk;
+    }
 }
