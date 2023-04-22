@@ -22,10 +22,8 @@
 
 .logo {
   transition: scale $transformTime $traformCub;
-  &:hover .logo__img {
-    scale: 0.9;
-  }
-  &:focus .logo__img {
+  &:hover,
+  &:focus {
     scale: 0.9;
   }
 }
@@ -80,22 +78,49 @@
   }
 }
 
-.menu__container {
-  opacity: 0;
-  transform: translate(0%, -100%);
-  transition: all $transformTime $traformCub;
-  @media screen and (max-width: 1279px) {
-    &.is-open {
-      opacity: 1;
-      transform: translate(0%, 0%);
-      margin-top: 15px;
-    }
+@keyframes menuHiden {
+  0% {
+    opacity: 0;
+    transform: translate(0%, -100%);
   }
-  @media screen and (min-width: 1280px) {
+  100% {
     opacity: 1;
     transform: translate(0%, 0%);
   }
 }
+
+.menu__container {
+  @media screen and (max-width: 1279px) {
+    &.is-open {
+      animation: menuHiden $traformCub $transformTime;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      margin-top: 15px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    animation: menuHide $traformCub $transformTime;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+}
+
+// .menu__container {
+//   opacity: 0;
+//   transform: translate(0%, -100%);
+//   transition: all $transformTime $traformCub;
+//   @media screen and (max-width: 1279px) {
+//     &.is-open {
+//       opacity: 1;
+//       transform: translate(0%, 0%);
+//       margin-top: 15px;
+//     }
+//   }
+//   @media screen and (min-width: 1280px) {
+//     opacity: 1;
+//     transform: translate(0%, 0%);
+//   }
+// }
 
 .navigation__item {
   display: flex;
@@ -153,97 +178,3 @@
   margin-right: 12px;
 }
 
-// HERO SECTION
-
-.hero {
-  position: relative;
-  padding: 40px 0px;
-}
-
-.hero__header {
-  font-weight: 600;
-  @media screen and (max-width: 767px) {
-    margin-bottom: 10px;
-    font-size: 28px;
-    line-height: 140%;
-  }
-  @media screen and (min-width: 768px) and(max-width: 1279px) {
-    width: 50%;
-    font-size: 38px;
-    line-height: 120%;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 50%;
-    font-size: 67px;
-    line-height: 110%;
-  }
-}
-
-.hero__description {
-  font-weight: 400;
-  @media screen and (max-width: 767px) {
-    margin-bottom: 40px;
-    font-size: 16px;
-    line-height: 140%;
-  }
-  @media screen and (min-width: 768px) and(max-width: 1279px) {
-    width: 50%;
-    margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 140%;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 50%;
-    margin-bottom: 30px;
-    font-size: 22px;
-    line-height: 160%;
-  }
-}
-
-.hero__card {
-  height: 310px;
-  background-color: bisque;
-  @media screen and (max-width: 767px) {
-    margin-bottom: 40px;
-    height: 310px;
-  }
-  @media screen and (min-width: 768px) and(max-width: 1279px) {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    width: 330px;
-    height: 330px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 510px;
-    height: 510px;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-  }
-}
-
-.start-btn {
-  background-color: $buttonColor;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 140%;
-  color: inherit;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  padding: 19px 50px;
-  @media screen and (max-width: 425px) {
-    padding: 19px 90px;
-    margin-bottom: 40px;
-  }
-  @media screen and (min-width: 768px) and(max-width: 1279px) {
-    margin-bottom: 20px;
-  }
-  @media screen and (min-width: 1280px) {
-    margin-bottom: 30px;
-  }
-}
-.start-btn > svg {
-  margin-right: 12px;
-}
