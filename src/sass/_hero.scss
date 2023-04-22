@@ -1,0 +1,131 @@
+// HERO SECTION
+
+.hero {
+  position: relative;
+  padding: 40px 0px;
+}
+
+.hero__header {
+  font-weight: 600;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 10px;
+    font-size: 28px;
+    line-height: 140%;
+  }
+  @media screen and (min-width: 768px) and(max-width: 1279px) {
+    width: 50%;
+    font-size: 38px;
+    line-height: 120%;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 50%;
+    font-size: 67px;
+    line-height: 110%;
+  }
+}
+
+.hero__description {
+  font-weight: 400;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  @media screen and (min-width: 768px) and(max-width: 1279px) {
+    width: 50%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 50%;
+    margin-bottom: 30px;
+    font-size: 22px;
+    line-height: 160%;
+  }
+}
+
+.hero__card {
+  height: 310px;
+  background-color: bisque;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+    height: 310px;
+  }
+  @media screen and (min-width: 768px) and(max-width: 1279px) {
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    width: 330px;
+    height: 330px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 510px;
+    height: 510px;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+  }
+}
+
+.start-btn {
+  background-color: $buttonColor;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: inherit;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 19px 50px;
+  transition: scale $transformTime $traformCub;
+  &:hover,
+  &:focus {
+    scale: 0.9;
+  }
+  @media screen and (max-width: 425px) {
+    padding: 19px 90px;
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: 768px) and(max-width: 1279px) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 30px;
+  }
+}
+.start-btn > svg {
+  margin-right: 12px;
+}
+
+.hero__abilyty {
+  display: flex;
+}
+
+.abilyty__item {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.abilyty__item > span {
+  display: block;
+  &:first-child {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 160%;
+    @media screen and (min-width: 1280px) {
+      font-size: 28px;
+      line-height: 140%;
+    }
+  }
+  &:last-child {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    @media screen and (min-width: 1280px) {
+      font-size: 24px;
+      line-height: 160%;;
+    }
+  }
+}
