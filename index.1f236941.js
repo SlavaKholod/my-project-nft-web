@@ -1,2 +1,0 @@
-const e={menuToggle:document.querySelector(".menu-toggle"),registrationBtn:document.querySelector(".user-btn"),navigation:document.querySelector(".navigation"),viewport:document};e.menuToggle.addEventListener("click",(function(){if(e.navigation.classList.contains("is-hidden"))return void e.navigation.classList.remove("is-hidden");e.navigation.classList.add("is-hidden")}));
-//# sourceMappingURL=index.1f236941.js.map
